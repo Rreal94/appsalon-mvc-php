@@ -1,0 +1,40 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barra {
+    text-align: center;
+    padding: 2rem 0;
+
+    @include m.desktop{
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        margin: 0 0 2rem 0;
+        @include m.desktop{
+            margin: 0;
+        }
+        span {
+            font-weight: v.$bold;
+        }
+    }
+    a {
+        color: v.$blanco;
+        font-size: 2rem;
+        font-weight: v.$bold;
+        &:hover {
+            color: v.$rojo;
+        }
+    }
+}
+
+.menu-servicios {
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton {
+        margin: 1rem 0;
+    }
+}

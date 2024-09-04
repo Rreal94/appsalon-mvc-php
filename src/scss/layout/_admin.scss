@@ -1,0 +1,83 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cita{
+    background-color: v.$blanco;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    cursor: pointer;
+    .datos{
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-gap: 1rem;
+        grid-auto-rows: minmax(1rem, auto);
+        z-index: 1;
+    }
+    .contacto{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        grid-auto-rows: minmax(1rem, auto);
+        p:last-of-type{
+            text-align: right;
+        }
+    }
+    p, h3 {
+        color: v.$negro;
+        margin: 1rem 0 ;
+    }
+
+    span {
+        color: v.$azul;
+        font-weight: v.$bold;
+    }
+
+    .tabla-servicios{
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+        color: v.$negro;
+        thead{
+            font-weight: v.$bold;
+            margin-bottom: 2rem;
+        }
+        tfoot{
+            font-weight: v.$bold;
+            margin-top: 2rem;
+        }
+        tbody{
+            td {
+                padding: 1rem 0;
+            }
+            td:first-of-type{
+                text-align: left;
+            }
+        }
+    }
+
+    .tarjeta{
+        transition: max-height 2s,opacity 3s;
+        transition-delay: 0s, 0s;
+        max-height: 0;
+        opacity: 0;
+        cursor: default;
+        &.ocultar-datos{
+            opacity: 0;
+            max-height: 0;
+        }
+    
+        &.mostrar-datos{
+            opacity: 1;
+            max-height: 100rem;
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: end;
+        .boton-rojo {
+            margin: 3rem 0 0 0;
+        }
+    }
+}

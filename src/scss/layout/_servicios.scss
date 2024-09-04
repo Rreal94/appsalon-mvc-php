@@ -1,0 +1,75 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.listado-servicios {
+    display: grid;
+    gap: 2rem;
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+    .servicio{
+        background-color: v.$blanco;
+        padding: 2rem;
+        border-radius: 1rem;
+        transition-property: transform;
+        transition-duration: 300ms;
+        cursor: pointer;
+        
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        p {
+            color: v.$negro;
+            margin: 0 0 calc(v.$separacion / 4) 0;
+            text-align: center;
+        }
+
+        .precio-servicio {
+            color: v.$azul;
+            font-weight: v.$bold;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        &.seleccionado{
+            background-color: v.$azul;
+            p{
+                color: v.$blanco;
+            }
+        }
+    }
+}
+
+.lista-servicios {
+    .servicio {
+        background-color: v.$blanco;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin: 1rem    ;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 2rem;
+        align-content: center;
+        p {
+            color: v.$negro;
+            margin: 0;
+            text-align: center;
+        }
+
+        .precio {
+            color: v.$azul;
+            font-weight: v.$bold;
+        }
+
+        .datos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .boton {
+            margin: 0;
+        }
+    }
+}
